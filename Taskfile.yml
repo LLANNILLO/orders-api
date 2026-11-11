@@ -1,0 +1,14 @@
+version: "3"
+
+vars:
+  COMPOSE: docker compose -f deployments/compose.yaml
+
+tasks:
+  up:
+    desc: Start the local stack and wait until every service is healthy
+    cmds:
+      - "{{.COMPOSE}} up -d --wait"
+  logs:
+    desc: "Follow logs (all services, or one: task logs -- [service])"
+    cmds:
+      - "{{.COMPOSE}} logs -f {{.CLI_ARGS}}"

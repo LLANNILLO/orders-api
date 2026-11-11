@@ -1,0 +1,4 @@
+name: orders
+
+include:
+  - path: redis/compose.yaml
