@@ -12,3 +12,8 @@ tasks:
     desc: "Follow logs (all services, or one: task logs -- [service])"
     cmds:
       - "{{.COMPOSE}} logs -f {{.CLI_ARGS}}"
+
+  exec:redis:
+    desc: "Execeute the container instance of redis"
+    cmds:
+      - "docker exec -it Orders.Cache redis-cli"

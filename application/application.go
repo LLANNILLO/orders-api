@@ -16,11 +16,13 @@ type App struct {
 
 func New() *App {
 	app := &App{
-		router: loadRoutes(),
 		rdb: redis.NewClient(&redis.Options{
 			Password: "orders_pwd_secure",
 		}),
 	}
+
+	app.loadRoutes()
+
 	return app
 }
 
